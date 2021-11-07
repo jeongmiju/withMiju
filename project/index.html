@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Miju's Web</title>
+    <link rel="stylesheet" href="./css/w3.css">
+
+    <style>
+        .mySlides {display:none}
+        * {font-family: "맑은 고딕", Arial, Helvetica, sans-serif;}
+        header h1 {text-align: center; font-size: 62px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; margin: 0px;}
+        a {text-decoration: none;}
+        body{max-width:980px; 
+            margin:0 auto;}
+        section {
+            display: flex;
+        }
+        article.main {
+            flex: 4;
+        }aside.right{
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <div class="w3-container w3-pale-yellow w3-text-amber" style="height: 100px">
+            <h1>Beauty Face</h1>
+        </div>
+    </header>
+    <nav>
+        <div class="w3-bar w3-white w3-border w3-text-amber">
+            <a href="#" class="w3-bar-item w3-button w3-amber" style="width:12%">Home</a>
+            <a href="#" class="w3-bar-item w3-button" style="width:12.5%">Base</a>
+            <a href="#" class="w3-bar-item w3-button" style="width:12.5%">Eye</a>
+            <a href="#" class="w3-bar-item w3-button" style="width:12.5%">Lip</a>
+            <a href="#" class="w3-bar-item w3-button" style="width:12.5%">Skin Care</a>
+            <a href="#" class="w3-bar-item w3-button" style="width:12.5%;">Edition</a>
+            <input type="text" class="w3-bar-item w3-input w3-text-black" placeholder="Search..">
+            <a href="#" class="w3-bar-item w3-button w3-amber">Go</a>
+        </div>
+    </nav>
+    <section class="w3-container">
+    <article class="main" class="w3-center">
+        <div class="w3-content w3-display-container w3-container w3-center w3-margin-top">
+            <img class="mySlides" src="./images/bb1.jpg" style="width:100%" >
+            <img class="mySlides" src="./images/bb2.jpg" style="width:100%" >
+            <img class="mySlides" src="./images/bb3.jpg" style="width:100%" >
+            <div class="w3-padding-32">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+              <h4><b>Welcome to Beauty Face!</b></h4>
+              <p>Beauty Face가 특별한 당신에게 특별한 화장품을 선사합니다</p>
+            </div>
+        </div>
+          <script>
+          var slideIndex = 1;
+          showDivs(slideIndex);
+          
+          function plusDivs(n) {
+            showDivs(slideIndex += n);
+          }
+          
+          function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            x[slideIndex-1].style.display = "block";  
+          }
+          </script>
+            <div class="w3-row-padding w3-padding-16 w3-center w3-text-amber" id="makeup"><h1>Best Seller</h1><br>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/new1.jpg" style="width:100%">
+                  <h3>클리어 패드</h3>
+                  <p>모공을 탄탄하게 케어해주며 매끈한 피부 선사</p>
+                  <p> 34000원</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">바로 주문하기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/new2.jpg" style="width:100%">
+                  <h3>메이크업 픽서</h3>
+                  <p>강력한 픽서로 하루종일 화장 그대로 유지</p>
+                  <p>30000원</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">바로 주문하기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/new3.jpg" style="width:100%">
+                  <h3>피치 블러셔</h3>
+                  <p>고운입자로 제작된 블러셔로 복숭아 빛 볼 연출 </p>
+                  <p>23000원</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">바로 주문하기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/new4.jpg" style="width:100%">
+                  <h3>브러쉬 세트</h3>
+                  <p>부위별 맞춤형 제작 브러쉬로 완벽 메이크업 완성</p>
+                  <p>40000원</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">바로 주문하기</button><br><br>
+                </div>
+                <a href="#" class="w3-button w3-text-black" >&laquo;</a>
+                <a href="#" class="w3-button w3-text-black">1</a>
+                <a href="#" class="w3-button w3-text-black">2</a>
+                <a href="#" class="w3-button w3-text-black">3</a>
+                <a href="#" class="w3-button w3-text-black">&raquo;</a><br>
+            </div>
+
+            <div class="w3-row-padding w3-padding-16 w3-center w3-text-amber" id="makeup"><h1>New Item</h1><br>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/m1.jpg" style="width:100%">
+                  <h3>가을 립</h3>
+                  <p>가을톤 저격 신상립</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">자세히 보기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/m2.jpg" style="width:100%">
+                  <h3>헤어 관리 세트</h3>
+                  <p>깔끔한 헤어 에센스</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">자세히 보기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/m3.jpg" style="width:100%">
+                  <h3>촉촉한 립 틴트</h3>
+                  <p>겨울맞이 촉촉틴트 </p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">자세히 보기</button>
+                </div>
+                <div class="w3-quarter w3-text-black">
+                  <img src="./images/m4.jpg" style="width:100%">
+                  <h3>쉐딩 세트</h3>
+                  <p>쉐딩과 블러셔를 한번에</p>
+                  <button class="w3-button w3-round-xlarge w3-yellow">자세히 보기</button><br><br>
+                </div>
+                <a href="#" class="w3-button w3-text-black" >&laquo;</a>
+                <a href="#" class="w3-button w3-text-black">1</a>
+                <a href="#" class="w3-button w3-text-black">2</a>
+                <a href="#" class="w3-button w3-text-black">3</a>
+                <a href="#" class="w3-button w3-text-black">&raquo;</a><br><br><br>
+            </div>
+            <div class="w3-jumbo w3-center">
+                <span class="w3-tag w3-jumbo w3-red">E</span>
+                <span class="w3-tag w3-jumbo">V</span>
+                <span class="w3-tag w3-jumbo w3-yellow">E</span>
+                <span class="w3-tag w3-jumbo">N</span>
+                <span class="w3-tag w3-jumbo w3-red">T</span>
+            </div>
+                <div class="w3-container w3-amber w3-text-white w3-margin-bottom w3-margin-top w3-center">
+                    <h1>[ NEW LIP EVENT]</h1>
+                    <p>뷰티페이스에서 선보이는 차세대 립틴트</p>
+                    <P>뷰티 페이스 립메이크업 신제품 전 컬러로 만나보세요</P>
+                </div>
+                <div class="w3-container w3-amber w3-text-white w3-margin-bottom w3-margin-top w3-center">
+                    <h1>[OLIVE YOUNG EVENT]</h1>
+                    <p>뷰티 페이스 전국 올리브영 매장 입점</p>
+                    <P>오프라인 매장에서도 뷰티페이스를 만나보세요 </P>
+                </div>
+                </div>
+            </div>   
+    </article>
+    <aside class="right" class="w3-container">
+    <div class="right" class="w3-container w3-margin-top">
+        <form class="w3-container w3-margin-top">
+        <label>아이디</label></p>
+        <input class="w3-input" type="text" name="" id="id" style="height: 10px;">
+        <p>
+        <label>비밀번호</label></p>  
+        <input class="w3-input" type="password" name="" id="pw" style="height: 10px;">
+        <p>
+        <input id="milk" class="w3-check" type="checkbox" checked="checked">
+        <label>로그인 상태 유지</label></p>
+        <button onclick="login();"class="w3-button w3-section w3-ripple w3-amber">로그인</button></p>
+        </form>
+    </div>
+    <script>
+        function login(){
+            let id = document.getElementById("id").value;
+            let pw = document.getElementById("pw").value;
+            if (id==="admin"){
+                if(pw=="1234"){
+                   alert("로그인이 되었습니다.")
+                } else{
+                    alert("비밀번호를 확인하세요");
+                }
+            }else{
+                alert("회원가입을 하세요");
+            }
+        }
+    </script>
+    <br><br><br><br>
+    <div class="w3-text-amber w3-margin-bottom w3-bar">
+        <a href="#" class="w3-amber w3-bar-item w3-button">장바구니</a><br><br>
+        <a href="#" class="w3-amber w3-bar-item w3-button">주문배송</a><br><br>
+        <a href="#" class="w3-amber w3-bar-item w3-button">고객센터</a><br><br>
+        <a href="#" class="w3-amber w3-bar-item w3-button">매장안내</a><br><br>
+    </div>
+    </aside>  
+    </section>  
+    </div>
+    <footer class="w3-padding-50 w3-light-grey w3-small w3-center" id="footer">
+        <div class="w3-row-padding">
+          <div class="w3-col s4">
+            <h4>Counseling</h4>
+            <p>Questions? Leave Email address.</p>
+            <form action="/action_page.php" target="_blank">
+              <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+              <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+              <button type="submit" class="w3-button w3-block w3-black">Send</button>
+            </form>
+          </div>
+    
+          <div class="w3-col s4">
+            <h4>About</h4>
+            <p><a href="#">Shipment</a></p>
+            <p><a href="#">Payment</a></p>
+            <p><a href="#">Gift card</a></p>
+            <p><a href="#">Help</a></p>
+          </div>
+    
+          <div class="w3-col s4 w3-justify">
+            <h4>Contact</h4>
+            <p>Phone number: 010-****-7529</p>
+            <p>Email: alwn7529@naver.com</p>
+            <br><br>
+          </div>
+          <div class="w3-col s4 w3-container" >
+            <h5></h5>
+            Copyright (c) Miju <br/>
+        </div>
+        </div>
+      </footer>
+</body>
+</html>
