@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Filmming</title>
+    <title>Beauty Face</title>
     <link rel="stylesheet" href="./css/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/layout.css">
@@ -17,8 +17,7 @@
         *{font-family: "Noto Sans KR", Arial, Helvetica, sans-serif;}
         body{max-width: 980px; margin: 0 auto;}
         header{
-            margin-top:50px;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         h1{text-align: center;}
         nav{
@@ -28,19 +27,10 @@
         #ad{z-index: 1;}
         #bestItem .w3-card-4{float: left;}
         #bestItem {overflow: hidden;}
-
-        .image{background:url(./images/m_cam1.jpg);background-size: cover;}
         .text{background:#000000; opacity: 0;}
         .text p{padding-top: 300px;}
         .image:hover .text{opacity: 0.5;text-align: center;color: #ffffff;}
         #items{float: left;}
-        #review{text-align: center;}
-        #reviewimg{display: inline-block;}
-        #reviewimg p{text-align: left;}
-        #login button{
-            background-color: #333;
-            color: white;
-        }
         #login a{
             text-decoration: none;
             margin: 5px 0px 0px 0px;
@@ -104,42 +94,54 @@
     </script>
 </head>
     <body onload="tablePrint();"></body>
-  <header>
-    <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
-    <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=400px height=75px></a></div>
-</header>
+    <header>
+      <div id="header"></div>
+      <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" style="height: 30px;" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="w3-bar-item w3-button">장바구니</a>
+        <a href="#" class="w3-bar-item w3-button">배송조회</a>
+        <a href="#" class="w3-bar-item w3-button">주문내역</a>
+        <a href="#" class="w3-bar-item w3-button">매장안내</a>
+    </div>
+    
+    <div>
+    <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+    </div>
+      <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
+      <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
+  </header>
     <nav>
       <ul>
-        <li class="dropdown w3-center ">
-            <a href="#" class="dropbtn w3-text-amber">Base</a>
-            <div class="dropdown-content">
-              <a href="#">파운데이션</a>
-              <a href="#">쿠션</a>
-              <a href="#">선크림</a>
-            </div>
-          </li>
-          <li class="dropdown" >
-            <a href="#" class="dropbtn w3-text-amber" >Eye</a>
-            <div class="dropdown-content">
-              <a href="#">아이섀도우</a>
-              <a href="#">아이라이너</a>
-              <a href="#">마스카라</a>
-              <a href="#">아이브로우</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href=".#" class="dropbtn w3-text-amber">Lip</a>
-            <div class="dropdown-content">
-              <a href="#">립스틱</a>
-              <a href="#">틴트</a>
-            </div>
-          </li>
-          <li class="dropdown">
-            <a href="./sub04.html" class="dropbtn w3-text-amber">Review</a>
-            <div class="dropdown-content">
-              <a href="./sub04.html">리뷰 등록</a>
-              <a href="./sub04.html">리뷰 보기</a>
-          </li>
+        <li class="dropdown w3-center">
+        </li>
+        <li class="dropdown" >
+          <a href="#" class="dropbtn w3-text-amber" >Eye</a>
+          <div class="dropdown-content">
+            <a href="#">아이섀도우</a>
+            <a href="#">아이라이너</a>
+            <a href="#">마스카라</a>
+            <a href="#">아이브로우</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href=".#" class="dropbtn w3-text-amber">Lip</a>
+          <div class="dropdown-content">
+            <a href="#">립스틱</a>
+            <a href="#">틴트</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="./sub04.html" class="dropbtn w3-text-amber">Review</a>
+          <div class="dropdown-content">
+            <a href="./sub04.html">리뷰 등록</a>
+            <a href="./sub04.html">리뷰 보기</a>
+        </li>
+        <li class="dropdown">
+          <a href="./sub05.html" class="dropbtn w3-text-amber">You Tube</a>
+          <div class="dropdown-content">
+            <a href="./sub05.html">유튜버 영상</a>
+          </div>
+        </li>
         </ul>
   </nav>
     <section class="w3-container">
@@ -189,18 +191,18 @@
         <a href="register.html" target="_blank" id="register" class="w3-button w3-orange" style="width: 100%;">회원가입</a><br><br>
         </center>
     </div>
-      <div id="search" class="w3-center w3-contaier w3-border w3-margin-left">
-          <p><b>고객지원센터</b></p>
-          <p><b>123-4560</b></p>
-          <table class="w3-table">
-                <tr>
-                  <td>주말 및 공휴일은 고객지원센터가 운영되지 않습니다.</td>
-                </tr>
-                <tr>
-                  <td>AM 10:00~ PM 18:00</td>
-                </tr>
-            </table><br><br>
-      </div>
+    <div id="search" class="w3-center w3-contaier w3-border w3-margin-left">
+        <p><b>고객지원센터</b></p>
+        <p><b>123-4560</b></p>
+        <table class="w3-table">
+              <tr>
+                <td>주말 및 공휴일은 고객지원센터가 운영되지 않습니다.</td>
+              </tr>
+              <tr>
+                <td>AM 10:00~ PM 18:00</td>
+              </tr>
+          </table><br>
+    </div>
     </aside>  
     </section>  
     </div>
