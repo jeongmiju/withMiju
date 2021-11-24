@@ -26,18 +26,10 @@
         }
         .text{background:#000000; opacity: 0;}
         .text p{padding-top: 300px;}
-        .image:hover .text{opacity: 0.5;text-align: center;color: #ffffff;}
-        #items{float: left;}
-        #review{text-align: center;}
-        #reviewimg{display: inline-block;}
-        #reviewimg p{text-align: left;}
         #login a{
             text-decoration: none;
             margin: 5px 0px 0px 0px;
         }
-        .myMenu{float: right;
-        margin: 5px 10px 0px 0px;}
-        .myMenu a{text-decoration: none;}
     </style>
     <script>
         function login(){
@@ -62,6 +54,14 @@
            function w3_close(){
                document.getElementById("mySidebar").style.display = "none";
            }
+           function entry(){
+              var a = 0;  
+               if(confirm("Beauty Face 1기 체험단에 지원하시겠습니까?")){
+                a+=1
+               alert("지원 완료되었습니다. 결과는 추후 개별 문자로 안내드립니다.")
+              document.getElementById("event-button").innerHTML=`<b><h4 style="color: rgb(255,193,7);">지원 완료!</h4></b>`
+                  }
+            }
     </script>
 </head>
 <body onload="popup();">
@@ -73,6 +73,7 @@
       <a href="#" class="w3-bar-item w3-button">배송조회</a>
       <a href="#" class="w3-bar-item w3-button">주문내역</a>
       <a href="#" class="w3-bar-item w3-button">매장안내</a>
+      <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
   </div>
   
   <div>
@@ -137,25 +138,6 @@
               <p>Beauty Face가 특별한 당신에게 특별한 화장품을 선사합니다</p><br>
             </div>
         </div>
-          <script>
-          var slideIndex = 1;
-          showDivs(slideIndex);
-          
-          function plusDivs(n) {
-            showDivs(slideIndex += n);
-          }
-          
-          function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-              x[i].style.display = "none";  
-            }
-            x[slideIndex-1].style.display = "block";  
-          }
-          </script>
             <div class="w3-row-padding w3-padding-16 w3-center w3-text-amber" id="makeup"><h1>Best Seller</h1>
               <div id="newArrival" class="w3-conatiner w3-margin-right w3-margin-top">
                 <h3 class="w3-center"></b></h3>
@@ -263,14 +245,32 @@
     </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
-        <center><h2 class="w3-text-brown"><b>Log In</b></h2>
+        <center><h2 class="w3-text-dark-grey"><b>Log In</b></h2>
         ID <br><input class="w3-input1" type="id" name="id" id="id" placeholder=" ID"><br><br>
         PASSWORD <br><input class="w3-input1" type="password" name="pass" id="pw" placeholder=" PASSWORD"><br>
         <button onclick="login();" class="w3-button w3-margin-top w3-amber" style="width: 100%; height: 38.5px;">로그인</button>
-        <a href="register.html" target="_blank" id="register" class="w3-button w3-orange" style="width: 100%;">회원가입</a><br><br>
-
+        <a class="w3-button w3-orange" style="width: 100%;">회원가입</a><br><br>
         </center>
     </div>
+      <div id="event" class="w3-center w3-contaier w3-border w3-margin-left">
+        <p style="color: rgb(255,193,7);"><b>Beauty Face <br> 1기 체험단 모집</b></p>
+        <p><b>2021.11.01 ~ 2021.11.30</b></p>
+        <table class="w3-table">
+          <div>
+            <tr>
+              <td> 매달 제공되는 Beauty Face 신제품 사용 및 리뷰 작성
+              </td>
+            </tr>
+            <tr>
+              <td>Beauty Face와 함께할 여러분 많은 지원 부탁드립니다!</td>
+            </tr>
+            <div id="event-button">
+              <button class="w3-button w3-amber w3-round-xxlarge w3-text-white" style="height: 36px;" onclick="entry();" id="event-button" >지원하기</button>
+            </div>
+          </div>
+        </table>
+      </div><br>
+
       <div id="search" class="w3-center w3-contaier w3-border w3-margin-left">
           <p><b>고객지원센터</b></p>
           <p><b>123-4560</b></p>
