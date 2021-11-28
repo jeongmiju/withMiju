@@ -76,7 +76,7 @@
             const liList = document.getElementsByTagName("li");
             console.log(liList)
             for(let i=0; i<liList.length; i++){
-                liList[i].style.color = "purple";
+                liList[i].style.color = "pink";
               }
             }
             
@@ -88,13 +88,12 @@
       <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" style="height: 30px;" id="mySidebar">
         <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
         <a href="./sub07.html" class="w3-bar-item w3-button">장바구니</a>
-        <a href="#" class="w3-bar-item w3-button">주문내역</a>
         <a href="#" class="w3-bar-item w3-button">매장안내</a>
         <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
     </div>
     
     <div>
-    <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+    <button class="w3-button" onclick="w3_open()">☰</button>
     </div>
       <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
       <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
@@ -137,7 +136,7 @@
       <article class="List" > 
         <h4 class="w3-text-black w3-center" ><b>출석이벤트</b></h4>
         <div style="border: 1.5px solid rgb(255,193,7); width: 740px;">
-          <h3 class="w3-center w3-text-amber">양식: 날짜 / 닉네임 / 출석</h3>
+          <h4 class="w3-center w3-text-amber"><b>양식: 날짜 / 닉네임 / 출석</h4></b>
         <h4><ol id="list">
           <li>2021.11.21 / 경정이 / 출석</li>
           <li>2021.11.21 / 웹프밍이 / 출석</li>
@@ -162,7 +161,7 @@
         </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
-        <center><h2 class="w3-text-brown"><b>Log In</b></h2>
+        <center><h2 class="w3-text-black"><b>Log In</b></h2>
         ID <br><input class="w3-input1" type="id" name="id" id="id" placeholder=" ID"><br><br>
         PASSWORD <br><input class="w3-input1" type="password" name="pass" id="pw" placeholder=" PASSWORD"><br>
         <button onclick="login();" class="w3-button w3-margin-top w3-amber" style="width: 100%; height: 38.5px;">로그인</button>
