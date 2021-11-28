@@ -31,6 +31,13 @@
             text-decoration: none;
             margin: 5px 0px 0px 0px;
         }
+        #cart, #list{
+            display : flex;
+        }
+        
+        #img1, #img2, #img3, #img4, #img5{
+            flex : 5;
+        }
     </style>
     <script>
         function login(){
@@ -63,23 +70,19 @@
               document.getElementById("event-button").innerHTML=`<b><h4 style="color: rgb(255,193,7);">지원 완료!</h4></b>`
                   }
             }
-            function funAppend(){
-            const list = document.createElement("li");
-            const work = document.getElementById("text").value;
-            const node = document.createTextNode(work);
-            list.appendChild(node);
-            const ele = document.getElementById("list");
-            ele.appendChild(list);
-             }
+            function cartAppend(e){
+            const x = document.getElementById(e);
+            const ele = document.getElementById("cart");
+            ele.appendChild(x);
+        }
 
-            const liStyle = function(){
-            const liList = document.getElementsByTagName("li");
-            console.log(liList)
-            for(let i=0; i<liList.length; i++){
-                liList[i].style.color = "purple";
-              }
-            }
-            
+        function cartRemove(e){
+            const x = document.getElementById(e);
+            const cart = document.getElementById("cart");
+            const list = document.getElementById("list");
+            cart.removeChild(x);
+            list.appendChild(x);
+        }
     </script>
 </head>
     <body onload="tablePrint();"></body>
@@ -134,31 +137,45 @@
         </ul>
   </nav>
     <section>
-      <article class="List" > 
-        <h4 class="w3-text-black w3-center" ><b>출석이벤트</b></h4>
-        <div style="border: 1.5px solid rgb(255,193,7); width: 740px;">
-          <h3 class="w3-center w3-text-amber">양식: 날짜 / 닉네임 / 출석</h3>
-        <h4><ol id="list">
-          <li>2021.11.21 / 경정이 / 출석</li>
-          <li>2021.11.21 / 웹프밍이 / 출석</li>
-          <li>2021.11.21 / 체험단뽑아주세용 / 출석</li>
-          <li>2021.11.21 / 출석왕내꺼 / 출석</li>
-          <li>2021.11.21 / 무료배송좋아 / 출석</li>
-          <li>2021.11.22 / 동아짱 / 출석</li>
-          <li>2021.11.22 / 출석매일하기 / 출석</li>
-          <li>2021.11.22 / 경품주세용 / 출석</li>
-          <li>2021.11.22 / 뷰티페이싱 / 출석</li>
-          <li>2021.11.23 / 믿쓰뷰티페이스 / 출석</li>
-          <li>2021.11.23 / 아이디뭐하지 / 출석</li>
-        </ol></h4>
-
-        <center>
-        <input id ="text" type="text" maxlength="40" ><br><br>
-        <button class="w3-btn w3-amber w3-text-white" style="height: 35px;" onclick="liStyle();">스타일</button>  
-        <button class="w3-btn w3-orange w3-text-white" style="height: 35px;" onclick="funAppend();">출석하기</button>
-        <br><br>
+    <article>
+    <h4 class="w3-text-black"><b>장바구니</b></h4>
+    <div id="cart" style="width: 740px; height: 360px; padding:20px; border: 1.5px solid rgb(255,193,7);"></div>
+    <br>
+    <h4 class="w3-text-black"><b>찜한 제품</b></h4>
+    <div id="list" style="width: 740px; height: 360px; padding:20px; border: 1.5px solid rgb(255,193,7); ">
+        <div id="img1">
+            <img src="./images/m1.jpg" width="150" height="200">
+            <div>
+              <p class="w3-text-brown">제품 : TAG 립스틱<br> 가격 : 20,000원</p>
+              <button class="w3-btn w3-round-xxlarge w3-text-amber w3-dark-gray" onclick="cartAppend('img1');" style="height: 37px; width: 60px;">추가</button>
+              <button class="w3-btn w3-round-xxlarge w3-text-dark-grey w3-amber" onclick="cartRemove('img1');" style="height: 37px; width: 60px;">삭제</button>
+            </div>
         </div>
-        </center>
+        <div id="img2">
+            <img src="./images/m2.jpg" width="150" height="200">
+            <div>
+              <p class="w3-text-brown">제품 : 헤어 관리 세트<br> 가격 : 29,900원</p>
+              <button class="w3-btn w3-round-xxlarge w3-text-amber w3-dark-gray" onclick="cartAppend('img2');" style="height: 37px; width: 60px;">추가</button>
+              <button class="w3-btn w3-round-xxlarge w3-text-dark-grey w3-amber" onclick="cartRemove('img2');" style="height: 37px; width: 60px;">삭제</button>
+            </div>
+        </div>
+        <div id="img3">
+            <img src="./images/m3.jpg" width="150" height="200">
+            <div>
+              <p class="w3-text-brown">제품 : 조이 립틴트<br>가격 : 12,000원</p>
+              <button class="w3-btn w3-round-xxlarge w3-text-amber w3-dark-gray" onclick="cartAppend('img3');" style="height: 37px; width: 60px;">추가</button>
+              <button class="w3-btn w3-round-xxlarge w3-text-dark-grey w3-amber" onclick="cartRemove('img3');" style="height: 37px; width: 60px;">삭제</button>
+            </div>
+        </div>
+        <div id="img4">
+            <img src="./images/new3.jpg" width="150" height="200">
+            <div >
+              <p class="w3-text-brown">제품 : 피치 블러셔<br> 가격 : 23,000원</p>
+              <button class="w3-btn w3-round-xxlarge w3-text-amber w3-dark-gray" onclick="cartAppend('img4');" style="height: 37px; width: 60px;">추가</button>
+              <button class="w3-btn w3-round-xxlarge w3-text-dark-grey w3-amber" onclick="cartRemove('img4');" style="height: 37px; width: 60px;">삭제</button>
+            </div>
+        </div>
+    </div>
         </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
