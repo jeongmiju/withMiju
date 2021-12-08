@@ -14,22 +14,23 @@
     <link rel="stylesheet" href="./css/nA_imghover.css">
     <link rel="stylesheet" href="./css/slider.css">
     <style>
-        *{font-family: "Noto Sans KR", Arial, Helvetica, sans-serif;}
-        body{max-width: 980px; margin: 0 auto;}
-        header{
-            margin-bottom: 20px;
-        }
-        h1{text-align: center;}
-        nav{
-            position: relative;
-            z-index: 2; 
-        }
-        .text{background:#000000; opacity: 0;}
-        .text p{padding-top: 300px;}
-        #login a{
-            text-decoration: none;
-            margin: 5px 0px 0px 0px;
-        }
+      *{font-family: "Noto Sans KR", Arial, Helvetica, sans-serif;}
+      body{max-width: 980px; margin: 0 auto;}
+      header{
+          margin-bottom: 20px;
+      }
+      h1{text-align: center;}
+      nav{
+          position: relative;
+          z-index: 2; 
+      }
+      .text{background:#000000; opacity: 0;}
+      .text p{padding-top: 300px;}
+      #items{float: left;}
+      #login a{
+          text-decoration: none;
+          margin: 5px 0px 0px 0px;
+      }
     </style>
     <script>
         function login(){
@@ -69,48 +70,49 @@
     <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none"  id="mySidebar">
       <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
       <a href="./sub07.html" class="w3-bar-item w3-button">장바구니</a>
-      <a href="#" class="w3-bar-item w3-button">매장안내</a>
+      <a href="./sub01.html" class="w3-bar-item w3-button">매장안내</a>
       <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
   </div>
-  
   <div>
   <button class="w3-button" onclick="w3_open()">☰</button>
   </div>
     <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
     <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
 </header>
-    <nav>
-      <ul>
-        <li class="dropdown">
-          <a href="#" class="dropbtn w3-text-amber" >Eye</a>
-          <div class="dropdown-content">
-            <a href="#">아이섀도우</a>
-            <a href="#">아이라이너</a>
-            <a href="#">마스카라</a>
-            <a href="#">아이브로우</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href=".#" class="dropbtn w3-text-amber">Lip</a>
-          <div class="dropdown-content">
-            <a href="#">립스틱</a>
-            <a href="#">틴트</a>
-          </div>
-        </li>
-        <li class="dropdown">
-          <a href="./sub04.html" class="dropbtn w3-text-amber">Review</a>
-          <div class="dropdown-content">
-            <a href="./sub04.html">리뷰 등록</a>
-            <a href="./sub04.html">리뷰 보기</a>
-        </li>
-        <li class="dropdown">
-          <a href="./sub05.html" class="dropbtn w3-text-amber">You Tube</a>
-          <div class="dropdown-content">
-            <a href="./sub05.html">유튜버 영상</a>
-          </div>
-        </li>
-      </ul>
-  </nav>
+<nav>
+  <ul>
+    <li class="dropdown w3-center">
+    </li>
+    <li class="dropdown" >
+      <a href="./sub02.html" class="dropbtn w3-text-amber" >Eye</a>
+      <div class="dropdown-content">
+        <a href="./sub02.html">아이섀도우</a>
+        <a href="./sub02.html">아이라이너</a>
+        <a href="./sub02.html">마스카라</a>
+        <a href="./sub02.html">아이브로우</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="./sub03.html" class="dropbtn w3-text-amber">Lip</a>
+      <div class="dropdown-content">
+        <a href="./sub03.html">립스틱</a>
+        <a href="./sub03.html">틴트</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <a href="./sub04.html" class="dropbtn w3-text-amber">Review</a>
+      <div class="dropdown-content">
+        <a href="./sub04.html">리뷰 등록</a>
+        <a href="./sub04.html">리뷰 보기</a>
+    </li>
+    <li class="dropdown">
+      <a href="./sub05.html" class="dropbtn w3-text-amber">You Tube</a>
+      <div class="dropdown-content">
+        <a href="./sub05.html">유튜버 영상</a>
+      </div>
+    </li>
+    </ul>
+</nav>
     <section>
       <article>
         <div id="ad" class="w3-margin-top">   
@@ -240,7 +242,7 @@
     </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
-        <center><h2 class="w3-text-dark-grey"><b>Log In</b></h2>
+        <center><h2 class="w3-text-black"><b>Log In</b></h2>
         ID <br><input class="w3-input1" type="id" name="id" id="id" placeholder=" ID"><br><br>
         PASSWORD <br><input class="w3-input1" type="password" name="pass" id="pw" placeholder=" PASSWORD"><br>
         <button onclick="login();" class="w3-button w3-margin-top w3-amber" style="width: 100%; height: 38.5px;">로그인</button>

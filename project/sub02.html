@@ -24,11 +24,15 @@
             position: relative;
             z-index: 2; 
         }
-        #items{float: left;}
+        .text{background:#000000; opacity: 0;}
+        .text p{padding-top: 300px;}
         #login a{
             text-decoration: none;
             margin: 5px 0px 0px 0px;
         }
+        .minibar{float: right;
+        margin: 10px 20px;}
+        .minibar a{text-decoration: none;}
     </style>
     <script>
         function login(){
@@ -61,51 +65,24 @@
               document.getElementById("event-button").innerHTML=`<b><h4 style="color: rgb(255,193,7);">지원 완료!</h4></b>`
                   }
             }
-           let data = [["./images/re1.png", "TAG 립스틱", "발색이 정말 자연스러워서 깜짝 놀랐어요! "],
-                ["./images/re2.png", "멀티 가히밤", "발랐을 때 촉촉하고 보습력이 좋아요!"],
-                ["./images/re3.png", "달바 스프레이 세럼", "촉촉해서 건조할때 뿌려주기 좋아요!"],
-                ["./images/re4.png", "투쿨 쉐딩 세트", "발색은 좋은데 가루날림이 있어요!"]]
-
-            function tablePrint(){
-            let text ="";
-            text = `<table class="w3-table-all w3-hoverable"><tr class="w3-dark-gray w3-center"><th class="w3-center w3-text-amber">제품 이미지</th><th class="w3-center w3-text-amber">제품명</th><th class="w3-center w3-text-amber">리뷰</th></tr>`;
-            for(let i = 0; i<data.length; i++){
-                text+=`<tr><td class="w3-center"><img src=${data[i][0]} style="height:150px;"></td><td class="w3-center">${data[i][1]}</td><td>${data[i][2]}</td></tr>`;
-            }
-            text += `</table>`;
-                document.getElementById("productList").innerHTML=text;
-           }
-
-       function fileUpload(){
-           let a = new Array();
-           let file = "./image/" + document.getElementById("file").files[0].name;
-           let title = document.getElementById("title").value;
-           let price = parseInt(document.getElementById("price").value);
-           
-           a[0] = file;
-           a[1] = title;
-           a[2] = price;
-           data.push(a);
-           console.log(data);
-       }
     </script>
 </head>
     <body onload="tablePrint();"></body>
     <header>
-      <div id="header"></div>
-      <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" style="height: 30px;" id="mySidebar">
-        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
-        <a href="./sub07.html" class="w3-bar-item w3-button">장바구니</a>
-        <a href="./sub01.html" class="w3-bar-item w3-button">매장안내</a>
-        <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
-    </div>
-    
-    <div>
-    <button class="w3-button" onclick="w3_open()">☰</button>
-    </div>
-      <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
-      <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
-  </header>
+        <div id="header"></div>
+        <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" style="height: 30px;" id="mySidebar">
+          <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+          <a href="./sub07.html" class="w3-bar-item w3-button">장바구니</a>
+          <a href="./sub01.html" class="w3-bar-item w3-button">매장안내</a>
+          <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
+      </div>
+      
+      <div>
+      <button class="w3-button" onclick="w3_open()">☰</button>
+      </div>
+        <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
+        <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
+    </header>
     <nav>
       <ul>
         <li class="dropdown w3-center">
@@ -139,21 +116,96 @@
         </li>
         </ul>
   </nav>
-    <section class="w3-container">
-      <article>
-        <div id="demo" class="w3-container w3-amver"><br>
-            <h4> <b> 등록된 리뷰 </b></h4>
-            <div id="productList">
-          </div>
-          <div id="product" class="w3-container w3-margin-top w3-margin-left" style="width: 723px;">
-            <h4> <b> 리뷰등록</b> </h4>
-            <input class="w3-input" type="text" name="" id="title" placeholder="제품명"> <br>
-            <input class="w3-input" type="file" name="" id="file"> <br>
-            <input class="w3-input" type="text" name="" id="price" placeholder="리뷰"> <br>
-            <button class= "w3-button w3-amber" onclick="fileUpload();" style="width: 20%; height: 1%;"> 등록하기</button>
-            <a href="#productList"><button class= "w3-button w3-orange" onclick="tablePrint();" style="width:20%; height: 1%"> 취소하기</button> </a><br><br>
-           </div>
-    </article>
+        <section>
+            <article id="lip" class="w3-containger">
+                <div class="minibar">
+                    <a href="./sub03.html" style="font-size: 13px;">신상품순 |</a>
+                    <a href="./sub03.html" style="font-size: 13px;">인기순 |</a>
+                    <a href="./sub03.html" style="font-size: 13px;">리뷰순</a></div><br><hr>
+                <div class="newImg">
+                          <div class="a">
+                              <div class="jb-wrap">
+                                <div class="jb-image" style="width: 220px;"><img src="./images/eye1.png" alt="드로잉 아이즈 브러쉬 라이너"></div><br>
+                                <div class="jb-text">
+                                드로잉 아이즈 브러쉬 라이너<br>9,000원<hr>
+                                </div>  
+                              </div>
+                          </div>
+                          <div class="a">
+                              <div class="jb-wrap">
+                                <div class="jb-image" style="width: 220px;"><img src="./images/eye2.png" alt="닥터 마스카라 픽서 블랙"></div><br>
+                                <div class="jb-text">
+                                닥터 마스카라 픽서 블랙<br>6,500원<hr>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="a">
+                              <div class="jb-wrap">
+                                <div class="jb-image" style="width: 220px;"><img src="./images/eye3.png" alt="플레이 컬러 아이즈 팔레트"></div><br>
+                                <div class="jb-text">
+                                플레이 컬러 아이즈 팔레트<br>21,000원<hr>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="a">
+                            <div class="jb-wrap">
+                              <div class="jb-image" style="width: 220px;"><img src="./images/eye4.png" alt="윈터 체크 팔레트 3종 키트 "></div><br>
+                              <div class="jb-text">
+                                윈터 체크 팔레트 3종 키트 <br>33,000원<hr>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="a">
+                            <div class="jb-wrap">
+                              <div class="jb-image" style="width: 220px;"><img src="./images/eye5.png" alt="드로잉 아이즈 브라우 펜슬"></div><br>
+                              <div class="jb-text">
+                            드로잉 아이즈 브라우 펜슬 <br>10,000원<hr>
+                              </div>
+                            </div>
+                        </div>
+                          <div class="a">
+                            <div class="jb-wrap">
+                            <div class="jb-image" style="width: 220px;"><img src="./images/eye6.png" alt=" 플레이 컬러 아이즈 카페인 홀릭
+                                "></div><br>  
+                            <div class="jb-text">
+                                플레이 컬러 아이즈 카페인 홀릭
+                                <br>24,000원<hr>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="a">
+                            <div class="jb-wrap">
+                            <div class="jb-image" style="width: 220px;"><img src="./images/eye7.png" alt="아이브라우 젤 틴트"></div> 
+                            <div class="jb-text">
+                            아이브라우 젤 틴트<br>7,900원<hr>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="a">
+                          <div class="jb-wrap">
+                            <div class="jb-image" style="width: 220px;"><img src="./images/eye8.png" alt="플레이 101 펜슬"></div><br>
+                            <div class="jb-text">
+                                플레이 101 펜슬<br>6,500원<hr>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="a">
+                          <div class="jb-wrap">
+                            <div class="jb-image" style="width: 220px;"><img src="./images/eye9.png" alt="미러 홀릭 리퀴드 아이즈"></div><br>  
+                            <div class="jb-text">
+                            미러 홀릭 리퀴드 아이즈 <br>14,500원<hr>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                            <a href="#" class="w3-button w3-text-black">&laquo;</a>
+                            <a href="#" class="w3-button w3-text-black">1</a>
+                            <a href="#" class="w3-button w3-text-black">2</a>
+                            <a href="#" class="w3-button w3-text-black">3</a>
+                            <a href="#" class="w3-button w3-text-black">&raquo;</a><br>
+                        </div><br>
+                      </div>
+            </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
         <center><h2 class="w3-text-black"><b>Log In</b></h2>
