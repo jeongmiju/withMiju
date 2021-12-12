@@ -40,19 +40,20 @@
         }
     </style>
     <script>
-        function login(){
-               let id = document.getElementById("id").value;
-               let pw = document.getElementById("pw").value;
-               if(id==="admin"){
-                   if(pw=="1234"){
-                       alert(id + "님이 로그인하였습니다 ");
-                   } else {
-                       alert("비밀번호를 확인하세요");
-                   }
-               }else{
-                   alert("회원가입이 필요합니다");
-               }
-           }
+       function login(){
+            let id = document.getElementById("id").value;
+            let pw = document.getElementById("pw").value;
+            if(id==="admin"){
+                if(pw=="1234"){
+                    alert(document.getElementById("login").innerHTML= id + 
+                     "님이 로그인 했습니다.");
+                } else{
+                    alert("비밀번호를 확인하세요");
+                }
+            } else{
+                alert("회원가입을 하세요");
+            }
+        }
            function popup(){
                window.open("event.html","이벤트","width=400, height=500, scrollbars=yes");
            }
@@ -184,7 +185,7 @@
         <a href="register.html" target="_blank" id="register" class="w3-button w3-orange" style="width: 100%;">회원가입</a><br><br>
         </center>
     </div>
-    <div id="event" class="w3-center w3-contaier w3-border w3-margin-left">
+    <div id="event" class="w3-center w3-contaier w3-border">
         <p style="color: rgb(255,193,7);"><b>Beauty Face <br> 1기 체험단 모집</b></p>
         <p><b>2021.11.01 ~ 2021.11.30</b></p>
         <table class="w3-table">
@@ -202,7 +203,7 @@
           </div>
         </table>
       </div><br>
-    <div id="search" class="w3-center w3-contaier w3-border w3-margin-left">
+    <div id="search" class="w3-center w3-contaier w3-border">
         <p><b>고객지원센터</b></p>
         <p><b>123-4560</b></p>
         <table class="w3-table">
