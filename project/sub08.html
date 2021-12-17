@@ -22,14 +22,13 @@
         h1{text-align: center;}
         .text{background:#000000; opacity: 0;}
         .text p{padding-top: 300px;}
-        #items{float: left;}
         #login a{
             text-decoration: none;
             margin: 5px 0px 0px 0px;
         }
-        #daily{
-            width: 720px; border: 1.5px solid gray;
-            padding: 5px; margin: 15px;
+        #div1{
+            width: 720px; height: 300px; border: 1.5px solid gray;
+            padding: 5px; margin: 0px 15px;
             display: inline-block;
         }
     </style>
@@ -47,7 +46,10 @@
             } else{
                 alert("회원가입을 하세요");
             }
-          }
+        }
+           function popup(){
+               window.open("event.html","이벤트","width=400, height=500, scrollbars=yes");
+           }
            function w3_open(){
                document.getElementById("mySidebar").style.display = "block";
            }
@@ -62,25 +64,17 @@
               document.getElementById("event-button").innerHTML=`<b><h4 style="color: rgb(255,193,7);">지원 완료!</h4></b>`
                   }
             }
-            function funAppend(){
-            const list = document.createElement("li");
-            const work = document.getElementById("text").value;
-            const node = document.createTextNode(work);
-            list.appendChild(node);
-            const ele = document.getElementById("list");
-            ele.appendChild(list);
-            }
-
-            const liStyle = function(){
-            const liList = document.getElementsByTagName("li");
-            console.log(liList)
-            for(let i=0; i<liList.length; i++){
-                liList[i].style.color = "pink";
-              }
-            }
-            
+            function drag(target, food) {		
+            food.dataTransfer.setData('Text', target.id);
+             };
+            function drop(target, food) {		
+            var id = food.dataTransfer.getData('Text');
+            target.appendChild(document.getElementById(id));
+            food.preventDefault();	
+            };
     </script>
-</head>
+    </head>
+
     <body onload="tablePrint();"></body>
     <header>
       <div id="header"></div>
@@ -97,7 +91,8 @@
     </div>
       <div class="w3-center w3-margin-top w3-margin-bottom w3-margin-xxlarge">
       <a href="index.html"><img src="./images/title.png" alt="Beautyface" width=410px height=75px></a></div>
-  </header>
+    </header>
+
     <nav>
       <ul>
         <li class="dropdown w3-center">
@@ -132,33 +127,35 @@
         </ul>
   </nav>
     <section>
-      <article class="List">
-        <div id="daily">
-        <h4 class="w3-center"><b>출석 이벤트</h4></b><hr>
-        <h4><ol id="list">
-          <li>2021.11.21 / 경정이 / 출석</li>
-          <li>2021.11.21 / 웹프밍이 / 출석</li>
-          <li>2021.11.21 / 체험단뽑아주세용 / 출석</li>
-          <li>2021.11.21 / 출석왕내꺼 / 출석</li>
-          <li>2021.11.21 / 무료배송좋아 / 출석</li>
-          <li>2021.11.22 / 동아짱 / 출석</li>
-          <li>2021.11.22 / 출석매일하기 / 출석</li>
-          <li>2021.11.22 / 경품주세용 / 출석</li>
-          <li>2021.11.22 / 뷰티페이싱 / 출석</li>
-          <li>2021.11.23 / 믿쓰뷰티페이스 / 출석</li>
-          <li>2021.11.23 / 아이디뭐하지 / 출석</li>
-        </ol></h4><hr>
-
-        <center>
-        <h4 class="w3-center w3-text-amber">날짜 / 닉네임 / 출석</h4>
-        <input id ="text" type="text" maxlength="40" ><br><br>
-        <button class="w3-btn w3-amber w3-text-white" style="height: 35px;" onclick="liStyle();">스타일</button>  
-        <button class="w3-btn w3-orange w3-text-white" style="height: 35px;" onclick="funAppend();">출석하기</button>
-        <br><br>
-      </div>
+    <article> <br>
+        <div id="div1" class="fl" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;" style="overflow:auto;">
+        <div class="w3-center"><h4><b> 2021 Beauty Face Awards</b></h4></div></div>
+        <div id="div3" ondrop="drop(this, event);" ondragenter="return false;" ondragover=" return false;">
+        <div class="w3-center"><h3><b></b></h3> <p style="color: rgb(255,193,7);">아래의 Beauty Face의 제품 중 만족스러웠던 제품을 끌어다 놓아주세요 
+            <br>상위권 제품들은 추후 이벤트로 진행됩니다!</p></div><br>
+        <div class="w3-center">
+        <img src="./images/eye1.png" alt="" draggable="true" id="eye1" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye2.png" alt="" draggable="true" id="eye2" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye3.png" alt="" draggable="true" id="eye3" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye4.png" alt="" draggable="true" id="eye4" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye5.png" alt="" draggable="true" id="eye5" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye6.png" alt="" draggable="true" id="eye6" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye7.png" alt="" draggable="true" id="eye7" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye8.png" alt="" draggable="true" id="eye8" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/eye9.png" alt="" draggable="true" id="eye9" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip1.png" alt="" draggable="true" id="lip1" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip2.png" alt="" draggable="true" id="lip2" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip3.png" alt="" draggable="true" id="lip3" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip4.png" alt="" draggable="true" id="lip4" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip5.png" alt="" draggable="true" id="lip5" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip6.png" alt="" draggable="true" id="lip6" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip7.png" alt="" draggable="true" id="lip7" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip8.png" alt="" draggable="true" id="lip8" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
+        <img src="./images/lip9.png" alt="" draggable="true" id="lip9" ondragstart="drag(this, event);" style="width: 130px; height: 130px; padding: 5px;">
         </div>
-        </center>
-        </article>
+        </div>
+    </article>
+
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
         <center><h2 class="w3-text-black"><b>Log In</b></h2>

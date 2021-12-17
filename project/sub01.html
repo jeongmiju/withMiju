@@ -20,15 +20,16 @@
             margin-bottom: 20px;
         }
         h1{text-align: center;}
-        nav{
-            position: relative;
-            z-index: 2; 
-        }
         .text{background:#000000; opacity: 0;}
         .text p{padding-top: 300px;}
         #login a{
             text-decoration: none;
             margin: 5px 0px 0px 0px;
+        }
+        #location{
+            width: 720px; border: 1.5px solid gray;
+            padding: 5px; margin: 15px;
+            display: inline-block;
         }
     </style>
     <script>
@@ -71,8 +72,9 @@
         <div class="w3-sidebar w3-bar-block	w3-border-right" style="display:none" style="height: 30px;" id="mySidebar">
           <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
           <a href="./sub07.html" class="w3-bar-item w3-button">장바구니</a>
-          <a href="./sub01.html" class="w3-bar-item w3-button">매장안내</a>
           <a href="./sub06.html" class="w3-bar-item w3-button">출석 이벤트</a>
+          <a href="./sub08.html" class="w3-bar-item w3-button">뷰티페이스 어워즈</a>
+          <a href="./sub01.html" class="w3-bar-item w3-button">매장안내</a>
       </div>
       
       <div>
@@ -116,10 +118,14 @@
   </nav>
         <section>
             <article class="location">
-            <h4 class="w3-text-black w3-center w3-margin-top"><b>Beauty Face 매장 위치</b></h4>
-            <img src="./images/location.png" alt="location" width="730px" height="400px"></a>        
+            <div id="location">
+            <h4 class="w3-text-black w3-center"><b>Beauty Face 매장 위치</b></h4><hr>
+            <img src="./images/location.png" alt="location">      
             <center><br>
-            <a href="./geolocation.html"><b>현재 나의 위치 확인하기</a></b>
+            </div>
+            <div class="w3-center">
+            <a href="./geolocation.html" target="_blank" id="geo" class="w3-button w3-amber">현재 나의 위치 확인하기</a><br><br>
+            </div> 
             </article>
     <aside class="right w3-contaier w3-margin-top">
       <div id="login">
@@ -176,7 +182,9 @@
             <h4>Contact</h4>
             <p>Phone number: 010-****-7529</p>
             <p>Email: alwn7529@naver.com</p>
-            <br><br>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" style="font-size:25px;"></i></a>&nbsp;
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" style="font-size:25px;"></i></a>&nbsp;
+            <br>
           </div>
           <div class="w3-col s4 w3-container" >
             <h5></h5>
